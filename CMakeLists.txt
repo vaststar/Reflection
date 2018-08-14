@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.6)
+project(test)
+add_subdirectory(ReflectCore)
+add_subdirectory(PluginCore)
+add_subdirectory(PluginManager)
+add_subdirectory(examplePlugin)
+add_subdirectory(test)
