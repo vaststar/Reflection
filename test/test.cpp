@@ -1,5 +1,5 @@
 #include "PluginManager/PluginManager.h"
-#include "PluginManager/PluginBase.h"
+#include "PluginCore/PluginBase.h"
 #include <iostream>
 
 int main()

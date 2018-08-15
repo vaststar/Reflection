@@ -12,6 +12,5 @@ target_link_libraries(examplePlugin ${PROJECT_SOURCE_DIR}/lib/PluginCore.lib ${P
 
 install(FILES ${HEAD_RES} DESTINATION ${PROJECT_SOURCE_DIR}/include/examplePlugin)
 install(TARGETS examplePlugin  
-		RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin
-		LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib
-		ARCHIVE DESTINATION ${PROJECT_SOURCE_DIR}/lib)
+		RUNTIME DESTINATION ${PROJECT_SOURCE_DIR}/bin/Plugins
+		)
