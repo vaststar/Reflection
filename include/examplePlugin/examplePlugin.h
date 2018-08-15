@@ -11,7 +11,7 @@ public:
 	examplePlugin();
 	~examplePlugin();
 public:
-	virtual void InitPlugin();
+	void InitPlugin()override final;
 
 private:
 
