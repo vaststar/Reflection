@@ -58,11 +58,10 @@ PluginManager * PluginManager::Instance()
 
 void PluginManager::startManager(const std::string &configPath)
 {
-	static bool alreadyStart = false;
+	std::lock_guard<std::mutex> loc(pluginManagerMutex);
 	//读取配置文件，解析需要加载的插件动态库
-	if (!alreadyStart && ParseJsonFile(configPath, _p->pluginConfig))
+	if ( ParseJsonFile(configPath, _p->pluginConfig))
 	{
-		alreadyStart = true;
 		//加载动态库
 		for (auto it : _p->pluginConfig)
 		{
@@ -82,7 +81,6 @@ void PluginManager::startManager(const std::string &configPath)
 		});
 
 	}
-	alreadyStart = false;
 }
 
 const std::map<std::string, PluginBase *> & PluginManager::getPlugins() const
